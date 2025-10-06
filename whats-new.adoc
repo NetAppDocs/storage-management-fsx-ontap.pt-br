@@ -24,9 +24,9 @@ Saiba o que há de novo no FSx para ONTAP.
 
 === BlueXP agora é NetApp Console
 
-O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, de forma altamente segura e compatível.
+O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, que é altamente segura e compatível.
 
-Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de versão do NetApp Console."^]
+Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de versão do NetApp Console ."^]
 
 
 
@@ -91,7 +91,7 @@ link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Conecte-
 
 === Implementar as melhores práticas para um sistema de arquivos FSx para ONTAP
 
-O BlueXP Workloads fornece um painel onde você pode revisar o status bem arquitetado das configurações do seu sistema de arquivos.  Você pode aproveitar essa análise para implementar as melhores práticas para seus sistemas de arquivos FSx para ONTAP .  A análise de configuração do sistema de arquivos inclui as seguintes configurações: limite de capacidade do SSD, snapshots locais agendados, FSx agendado para backups ONTAP , camadas de dados e replicação remota de dados.
+O BlueXP Workloads fornece um painel onde você pode revisar o status bem arquitetado das configurações do seu sistema de arquivos.  Você pode aproveitar essa análise para implementar as melhores práticas para seus sistemas de arquivos FSx para ONTAP .  A análise de configuração do sistema de arquivos inclui as seguintes configurações: limite de capacidade do SSD, snapshots locais agendados, FSx agendado para backups ONTAP , hierarquização de dados e replicação remota de dados.
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/configuration-analysis.html["Aprenda sobre a análise bem arquitetada para configurações de sistemas de arquivos"]
 * link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_well-architected/improve-configurations.html["Implemente as melhores práticas para seus sistemas de arquivos"]

@@ -14,7 +14,7 @@ summary: Para excluir um sistema de arquivos do NetApp Console, você deve prime
 Para excluir um sistema de arquivos FSx for ONTAP , você deve primeiro excluir quaisquer volumes, VMs de armazenamento ou relacionamentos de replicação associados ao sistema de arquivos.
 
 .Passos
-. No menu do NetApp Console, selecione *Armazenamento* e depois *Gerenciamento*.
+. No menu do NetApp Console , selecione *Armazenamento* e depois *Gerenciamento*.
 . Selecione o sistema de arquivos que você deseja remover.
 . Selecione *Entrar no sistema*.
 . No FSx para ONTAP em Armazenamento, selecione o menu de três pontos e depois selecione *Excluir*.

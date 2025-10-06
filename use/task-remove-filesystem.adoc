@@ -20,7 +20,7 @@ Remova um sistema de arquivos FSx para ONTAP de um projeto no NetApp Console.  E
 Remover um sistema de arquivos FSx para ONTAP de um projeto o remove do NetApp Console.  Ele não exclui o sistema de arquivos FSx para ONTAP .  Mais tarde, você pode redescobrir o sistema de arquivos FSx para ONTAP no mesmo projeto ou em um projeto diferente dentro da mesma conta.
 
 .Passos
-. No menu do NetApp Console, selecione *Armazenamento* e depois *Gerenciamento*.
+. No menu do NetApp Console , selecione *Armazenamento* e depois *Gerenciamento*.
 . Selecione o sistema de arquivos que você deseja remover.
 . Selecione *Entrar no sistema*.
 . No FSx para ONTAP no Armazenamento, selecione o menu de três pontos e, em seguida, selecione *Remover do projeto*.

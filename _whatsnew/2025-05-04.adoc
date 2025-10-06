@@ -20,7 +20,7 @@ link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Conecte-
 
 === Implementar as melhores práticas para um sistema de arquivos FSx para ONTAP
 
-O BlueXP Workloads fornece um painel onde você pode revisar o status bem arquitetado das configurações do seu sistema de arquivos.  Você pode aproveitar essa análise para implementar as melhores práticas para seus sistemas de arquivos FSx para ONTAP .  A análise de configuração do sistema de arquivos inclui as seguintes configurações: limite de capacidade do SSD, snapshots locais agendados, FSx agendado para backups ONTAP , camadas de dados e replicação remota de dados.
+O BlueXP Workloads fornece um painel onde você pode revisar o status bem arquitetado das configurações do seu sistema de arquivos.  Você pode aproveitar essa análise para implementar as melhores práticas para seus sistemas de arquivos FSx para ONTAP .  A análise de configuração do sistema de arquivos inclui as seguintes configurações: limite de capacidade do SSD, snapshots locais agendados, FSx agendado para backups ONTAP , hierarquização de dados e replicação remota de dados.
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/configuration-analysis.html["Aprenda sobre a análise bem arquitetada para configurações de sistemas de arquivos"]
 * link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_well-architected/improve-configurations.html["Implemente as melhores práticas para seus sistemas de arquivos"]

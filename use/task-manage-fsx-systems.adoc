@@ -64,9 +64,9 @@ link:https://docs.netapp.com/us-en/data-services-copy-sync/task-quick-start.html
 
 === Digitalize e classifique seus dados
 
-A classificação de dados da NetApp permite que você escaneie e classifique dados na multinuvem híbrida da sua organização.
+A NetApp Data Classification permite que você escaneie e classifique dados na multinuvem híbrida da sua organização.
 
-link:https://docs.netapp.com/us-en/data-services-data-classification/index.html["Comece a usar a classificação de dados da NetApp"^]
+link:https://docs.netapp.com/us-en/data-services-data-classification/index.html["Comece a usar a NetApp Data Classification"^]
 
 
 
@@ -74,9 +74,9 @@ link:https://docs.netapp.com/us-en/data-services-data-classification/index.html[
 
 Replique dados para dar suporte a backup e recuperação de desastres.  A replicação de dados entre um sistema de arquivos FSx para ONTAP e o Cloud Volumes ONTAP, ou um sistema de arquivos FSx para ONTAP e um sistema ONTAP local, pode ser realizada usando o NetApp Replication.  A replicação permite que você replique dados entre sistemas de armazenamento ONTAP para dar suporte a backup e recuperação de desastres na nuvem ou entre nuvens.
 
-link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Comece a usar a replicação do NetApp"^]
+link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Comece a usar a NetApp Replication"^]
 
-A replicação de dados entre dois sistemas de arquivos FSx para ONTAP é possível na página Sistemas do Console NetApp .
+A replicação de dados entre dois sistemas de arquivos FSx para ONTAP é possível na página Sistemas do NetApp Console .
 
 .Antes de começar
 Considere o seguinte antes de começar.
@@ -93,7 +93,7 @@ Considere o seguinte antes de começar.
 .. *Nome do alvo*: O nome do alvo foi selecionado anteriormente durante a operação de arrastar e soltar na tela.
 .. *Nome da VM de armazenamento*: Selecione a VM de armazenamento no menu suspenso.  A VM de armazenamento selecionada é o destino para todos os volumes selecionados neste relacionamento de replicação.
 .. *Nome do volume*: O nome do volume de destino é gerado automaticamente com o seguinte formato `{OriginalVolumeName}_copy` .  Você pode usar o nome do volume gerado automaticamente ou inserir outro nome de volume.
-.. *Caso de uso*: Selecione um dos seguintes casos de uso para a replicação. Dependendo do caso de uso selecionado, o Workload Factory preenche o formulário com valores recomendados de acordo com as melhores práticas. Você pode aceitar os valores recomendados ou fazer alterações à medida que preenche o formulário.
+.. *Caso de uso*: Selecione um dos seguintes casos de uso para a replicação.  Dependendo do caso de uso selecionado, o Workload Factory preenche o formulário com valores recomendados de acordo com as melhores práticas.  Você pode aceitar os valores recomendados ou fazer alterações à medida que preenche o formulário.
 +
 *** Migração: transfere seus dados para o sistema de arquivos FSx for ONTAP de destino
 *** Recuperação de desastres a quente: garante alta disponibilidade e recuperação rápida de desastres para cargas de trabalho críticas
@@ -119,10 +119,10 @@ Para todos os casos de uso, se você habilitar snapshots para retenção de long
 
 .. *Política de níveis*: Selecione a política de níveis para os dados armazenados no volume de destino.  A política de camadas assume como padrão a política de camadas recomendada para o caso de uso selecionado.
 +
-_Balanceado (Automático)_ é a política de camadas padrão ao criar um volume usando o console do Workload Factory. Para obter mais informações sobre políticas de níveis de volume, consultelink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de armazenamento de volume"^] na documentação do AWS FSx para NetApp ONTAP . Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de camadas e inclui nomes de políticas de camadas do FSx para ONTAP entre parênteses.
+_Balanceado (Automático)_ é a política de camadas padrão ao criar um volume usando o console do Workload Factory.  Para obter mais informações sobre políticas de níveis de volume, consultelink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de armazenamento de volume"^] na documentação do AWS FSx para NetApp ONTAP .  Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de camadas e inclui nomes de políticas de camadas do FSx para ONTAP entre parênteses.
 
 +
-Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente copiar a política de camadas do volume de origem para o volume de destino. Você pode desmarcar a opção de copiar a política de camadas e selecionar uma política de camadas que se aplique ao volume selecionado para replicação.
+Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente copiar a política de camadas do volume de origem para o volume de destino.  Você pode desmarcar a opção de copiar a política de camadas e selecionar uma política de camadas que se aplique ao volume selecionado para replicação.
 
 .. *Taxa máxima de transferência*: Selecione *Limitado* e insira o limite máximo de transferência em MB/s.  Como alternativa, selecione *Ilimitado*.
 +

@@ -36,7 +36,7 @@ Antes de criar seu sistema de arquivos FSx para ONTAP , você precisará:
 
 == Crie um FSx para o sistema de arquivos ONTAP
 
-Você pode criar um FSx para o sistema de arquivos ONTAP usando _Criação rápida_ ou _Criação avançada_. Você também pode usar as seguintes ferramentas disponíveis no Codebox: REST API, CloudFormation e Terraform. link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["Aprenda a usar o Codebox para automação"^] .
+Você pode criar um FSx para o sistema de arquivos ONTAP usando _Criação rápida_ ou _Criação avançada_.  Você também pode usar as seguintes ferramentas disponíveis no Codebox: REST API, CloudFormation e Terraform. link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["Aprenda a usar o Codebox para automação"^] .
 
 
 NOTE: Ao usar o Terraform do Codebox, o código que você copia ou baixa fica oculto `fsxadmin` e `vsadmin` senhas.  Você precisará digitar as senhas novamente quando executar o código.
@@ -48,7 +48,7 @@ NOTE: Ao usar o Terraform do Codebox, o código que você copia ou baixa fica oc
 A criação rápida permite que você use uma configuração de práticas recomendadas.  Você pode alterar a maioria das configurações depois de criar um sistema de arquivos FSx para ONTAP .
 
 .Passos
-. No menu do NetApp Console, selecione *Armazenamento* e depois *Gerenciamento*.
+. No menu do NetApp Console , selecione *Armazenamento* e depois *Gerenciamento*.
 . Selecione *Adicionar sistema* na página Sistemas.
 . Selecione *Amazon Web Services* como o local e, em seguida, selecione *Adicionar novo* para Amazon FSx for NetApp ONTAP.
 . Na página Criar FSx para sistema de arquivos ONTAP , selecione *Criação rápida*.
@@ -57,7 +57,7 @@ Você também pode carregar uma configuração salva.
 
 . Em Configuração geral do sistema de arquivos, forneça o seguinte:
 +
-.. *Credenciais da AWS*: selecione para adicionar credenciais da AWS ou continuar sem credenciais.  Sem credenciais, você pode copiar e baixar o código parcialmente completo do Codebox. O código pode ser usado como um modelo onde você pode preencher informações ausentes (por exemplo, credenciais) ou personalizar determinados dados antes de executar o código.
+.. *Credenciais da AWS*: selecione para adicionar credenciais da AWS ou continuar sem credenciais.  Sem credenciais, você pode copiar e baixar o código parcialmente completo do Codebox.  O código pode ser usado como um modelo onde você pode preencher informações ausentes (por exemplo, credenciais) ou personalizar determinados dados antes de executar o código.
 .. *Nome do sistema de arquivos*: Digite um nome para o sistema de arquivos.
 .. *Topologia de implantação*: Selecione uma topologia de implantação.
 +
@@ -114,7 +114,7 @@ Se você estiver ingressando em um AD autogerenciado, use o nome do grupo no seu
 .Resultado
 Se você criou o sistema de arquivos, a nova configuração do FSx para ONTAP aparecerá na página Sistemas.
 
-Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como por meio de Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .
+Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como em Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .
 
 --
 .Criação avançada
@@ -122,7 +122,7 @@ Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneira
 Com a criação avançada, você define todas as opções de configuração, incluindo disponibilidade, segurança, backups e manutenção.
 
 .Passos
-. No menu do NetApp Console, selecione *Armazenamento* e depois *Gerenciamento*.
+. No menu do NetApp Console , selecione *Armazenamento* e depois *Gerenciamento*.
 . Selecione *Adicionar sistema* na página Sistemas.
 . Selecione *Amazon Web Services* como o local e, em seguida, selecione *Adicionar novo* para Amazon FSx for NetApp ONTAP.
 . Na página Criar FSx para ONTAP , selecione *Criação avançada*.
@@ -215,7 +215,7 @@ Se você estiver ingressando em um AD autogerenciado, use o nome do grupo no seu
 .Resultado
 Se você criou o sistema de arquivos, a nova configuração do FSx para ONTAP aparecerá na página Sistemas.
 
-Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como por meio de Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .
+Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como em Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .
 
 --
 ====
@@ -223,13 +223,13 @@ Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneira
 
 == Descubra um sistema de arquivos FSx para ONTAP existente
 
-Se você forneceu anteriormente suas credenciais da AWS no NetApp Console, poderá descobrir automaticamente os sistemas de arquivos FSx for ONTAP na página Sistemas detectáveis.  Você também pode revisar os serviços de dados disponíveis.
+Se você forneceu anteriormente suas credenciais da AWS no NetApp Console, poderá descobrir automaticamente os sistemas de arquivos FSx for ONTAP na página Discoverable systems .  Você também pode revisar os serviços de dados disponíveis.
 
 .Sobre esta tarefa
 Você pode descobrir um sistema de arquivos FSx para ONTAP apenas uma vez em uma conta e anexá-lo a um espaço de trabalho.  O sistema de arquivos pode ser removido posteriormente e reassociado a um espaço de trabalho diferente.
 
 .Passos
-. No menu do NetApp Console, selecione *Armazenamento*, depois *Gerenciamento* e, por fim, *Sistemas detectáveis*.
+. No menu do NetApp Console , selecione *Armazenamento*, depois *Gerenciamento* e, por fim, * Discoverable systems*.
 . A contagem de FSx descobertos para sistemas de arquivos ONTAP é exibida. Selecione *Descobrir*.
 . Selecione um ou mais sistemas de arquivos e selecione *Descobrir* para adicioná-los à página Sistemas.
 
@@ -237,9 +237,9 @@ Você pode descobrir um sistema de arquivos FSx para ONTAP apenas uma vez em uma
 [NOTE]
 ====
 * Se você selecionar um cluster sem nome, receberá um prompt para inserir um nome para o cluster.
-* Se você selecionar um cluster que não tenha as credenciais necessárias para gerenciar o sistema de arquivos FSx for ONTAP no Console, receberá um prompt para selecionar credenciais com as permissões necessárias.
+* Se você selecionar um cluster que não tenha as credenciais necessárias para gerenciar o sistema de arquivos FSx para ONTAP no Console, receberá um prompt para selecionar credenciais com as permissões necessárias.
 
 
 ====
 .Resultado
-O Console exibe o sistema de arquivos FSx for ONTAP descoberto na página Sistemas.  Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como por meio de Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .
+O Console exibe o sistema de arquivos FSx for ONTAP descoberto na página Sistemas.  Você pode gerenciar seus sistemas de arquivos FSx para ONTAP de várias maneiras, como em Cargas de trabalho no NetApp Console, usando o ONTAP System Manager e usando o AWS CloudFormation. Saiba como link:task-manage-fsx-systems.html["gerenciar um sistema de arquivos FSx para ONTAP"] .

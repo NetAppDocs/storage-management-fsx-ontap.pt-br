@@ -11,7 +11,7 @@ summary: Rastreie o FSx para operações ONTAP e monitore o progresso da operaç
 
 
 [role="lead"]
-Monitore e acompanhe a execução do FSx para operações ONTAP e monitore o progresso do trabalho com o Tracker no NetApp Console.
+Monitore e acompanhe a execução das operações do FSx para ONTAP e monitore o progresso do trabalho com o Tracker no NetApp Console.
 
 .Sobre esta tarefa
 O NetApp Console fornece o Tracker, um recurso de monitoramento de tarefas, para que você possa monitorar e rastrear o progresso e o status das credenciais, FSx para ONTAP e operações de link, revisar detalhes de tarefas e subtarefas de operação e diagnosticar quaisquer problemas ou falhas.
@@ -40,7 +40,7 @@ Retenção de eventos:: Os eventos são retidos na interface do usuário por 30 
 Rastreie e monitore operações no NetApp Console com o Tracker.
 
 .Passos
-. No menu do NetApp Console, selecione *Cargas de trabalho* e depois *Administração*.
+. No menu do NetApp Console , selecione *Cargas de trabalho* e depois *Administração*.
 . No menu Administração, selecione *Rastreador*.
 . No Rastreador, visualize tarefas ou use os filtros ou pesquise para restringir os resultados.  Você também pode baixar um relatório de todas as operações selecionando *Exportar CSV*.
 
