@@ -1,0 +1,15 @@
+= Adicionar uma VM de armazenamento
+:allow-uri-read: 
+
+
+
+
+=== Adicionar uma VM de armazenamento
+
+Agora você pode adicionar uma VM de armazenamento ao sistema de arquivos Amazon FSx for NetApp ONTAP usando o BlueXP.
+
+
+
+=== A aba **Minhas Oportunidades** agora é **Meu patrimônio**
+
+A aba **Minhas Oportunidades** agora é **Meu patrimônio**.  A documentação é atualizada para refletir o novo nome.

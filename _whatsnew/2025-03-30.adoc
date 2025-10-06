@@ -1,0 +1,11 @@
+= iam:Atualização de permissão SimulatePermissionPolicy
+:allow-uri-read: 
+
+
+
+
+=== iam:Atualização de permissão SimulatePermissionPolicy
+
+Agora você pode gerenciar o `iam:SimulatePrincipalPolicy` permissão do console BlueXP quando você adiciona credenciais de conta adicionais da AWS ou adiciona um novo recurso de carga de trabalho, como a carga de trabalho GenAI.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["Registro de alterações de referência de permissões"^]

@@ -1,0 +1,11 @@
+= Eventos do CloudShell no Tracker
+:allow-uri-read: 
+
+
+
+
+=== Eventos do CloudShell no Tracker
+
+Sempre que você usa o CloudShell para executar operações do FSx para ONTAP a partir do BlueXP Workloads, os eventos aparecem no Tracker.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-monitor-operations.html["Aprenda a monitorar e rastrear operações FSx para ONTAP no BlueXP"^]

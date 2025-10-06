@@ -1,0 +1,35 @@
+= Associar o sistema de arquivos FSx para ONTAP a um espaço de trabalho no BlueXP
+:allow-uri-read: 
+
+
+
+
+=== Associar o sistema de arquivos FSx para ONTAP a um espaço de trabalho no BlueXP
+
+Após a integração do BlueXP em novembro de 2024, os sistemas de arquivos FSx para ONTAP recém-criados não foram associados a um espaço de trabalho no BlueXP.  Agora, quando você cria ou descobre sistemas de arquivos FSx para ONTAP , eles são associados a um espaço de trabalho dentro de uma conta BlueXP .
+
+Se você tiver sistemas de arquivos FSx para ONTAP existentes que não estejam associados a um espaço de trabalho, ajudaremos você a associá-los a um espaço de trabalho no BlueXP.  Você podelink:https://docs.netapp.com/us-en/bluexp-setup-admin/task-get-help.html#create-a-case-with-netapp-support["crie um caso com o Suporte NetApp"^] de dentro do console BlueXP .  Selecione *Workload Factory* como o serviço.
+
+
+
+=== Remoção do sistema de arquivos do BlueXP Canvas
+
+Agora você pode remover um sistema de arquivos FSx para ONTAP de um espaço de trabalho na tela BlueXP .  Esta operação dissocia o sistema de arquivos de um espaço de trabalho para que você possa associá-lo a outro espaço de trabalho dentro da mesma conta BlueXP .
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-remove-filesystem.html["Aprenda como remover um sistema de arquivos FSx para ONTAP de um espaço de trabalho no BlueXP"^]
+
+
+
+=== Rastreador disponível para operações de monitoramento e rastreamento
+
+O Tracker, um novo recurso de monitoramento, está disponível no BlueXP Amazon FSx for NetApp ONTAP.  Você pode usar o Tracker para monitorar e rastrear o progresso e o status de credenciais, armazenamento e operações de link, revisar detalhes de tarefas e subtarefas de operação, diagnosticar quaisquer problemas ou falhas, editar parâmetros para operações com falha e repetir operações com falha.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-monitor-operations.html["Aprenda a monitorar e rastrear operações FSx para ONTAP no BlueXP"^]
+
+
+
+=== CloudShell disponível em cargas de trabalho BlueXP
+
+O CloudShell está disponível quando você está no BlueXP Workloads no console do BlueXP .  O CloudShell permite que você use as credenciais da AWS e do ONTAP fornecidas na sua conta BlueXP e execute comandos da AWS CLI ou comandos da ONTAP CLI em um ambiente semelhante a um shell.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html["Usar CloudShell"^]

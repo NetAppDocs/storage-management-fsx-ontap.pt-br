@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: use/task-monitor-operations.html 
+keywords: monitor jobs, track jobs, monitor, track, NetApp Console, bluexp 
+summary: Rastreie o FSx para operações ONTAP e monitore o progresso da operação com o Tracker no NetApp Console. 
+---
+= Monitore o FSx para operações ONTAP com o Tracker no NetApp Console
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Monitore e acompanhe a execução do FSx para operações ONTAP e monitore o progresso do trabalho com o Tracker no NetApp Console.
+
+.Sobre esta tarefa
+O NetApp Console fornece o Tracker, um recurso de monitoramento de tarefas, para que você possa monitorar e rastrear o progresso e o status das credenciais, FSx para ONTAP e operações de link, revisar detalhes de tarefas e subtarefas de operação e diagnosticar quaisquer problemas ou falhas.
+
+Várias ações estão disponíveis no Tracker.  Você pode filtrar trabalhos por período (últimas 24 horas, 7 dias, 14 dias ou 30 dias), carga de trabalho, status e usuário; encontrar trabalhos usando a função de pesquisa; e baixar a tabela de trabalhos como um arquivo CSV.  Você pode atualizar o Tracker a qualquer momento.  E você pode rapidamente tentar novamente uma operação com falha ou editar parâmetros para uma operação com falha e tentar a operação novamente.
+
+O Tracker suporta dois níveis de monitoramento, dependendo da operação.  Cada tarefa, como implantação do sistema de arquivos, exibe a descrição da tarefa, status, hora de início, duração da tarefa, usuário, região, recurso de proxy, ID da tarefa e todas as subtarefas relacionadas.  Você pode visualizar as respostas da API para entender o que aconteceu durante a operação.
+
+Níveis de tarefas do rastreador com exemplos::
++
+--
+* Nível 1 (tarefa pai): rastreia a implantação do sistema de arquivos.
+* Nível 2 (subtarefa): rastreia as subtarefas relacionadas à implantação do sistema de arquivos.
+
+
+--
+Status da operação:: O status da operação no Tracker é o seguinte: _em andamento_, _sucesso_ e _falha_.
+Frequência de operação:: A frequência da operação é baseada no tipo de tarefa e no cronograma.
+Retenção de eventos:: Os eventos são retidos na interface do usuário por 30 dias.
+
+
+
+
+== Rastrear e monitorar operações
+
+Rastreie e monitore operações no NetApp Console com o Tracker.
+
+.Passos
+. No menu do NetApp Console, selecione *Cargas de trabalho* e depois *Administração*.
+. No menu Administração, selecione *Rastreador*.
+. No Rastreador, visualize tarefas ou use os filtros ou pesquise para restringir os resultados.  Você também pode baixar um relatório de todas as operações selecionando *Exportar CSV*.
+
+
+
+
+== Exibir solicitação de API
+
+Visualize a solicitação de API no Codebox para uma tarefa no Tracker.
+
+.Passos
+. No Tracker, selecione uma tarefa.
+. Selecione o menu de três pontos e depois selecione *Exibir solicitação de API*.
+
+
+
+
+== Tentar novamente uma operação com falha
+
+Repita uma operação com falha no Tracker.  Tentar novamente a operação com falha inicia uma nova tarefa que você pode monitorar no Tracker.
+
+Você também pode copiar a mensagem de erro de uma operação com falha.
+
+
+NOTE: Você pode tentar novamente a operação com falha apenas uma vez.
+
+.Passos
+. No Tracker, selecione uma operação com falha.
+. Selecione o menu de três pontos e depois selecione *Repetir*.
+
+
+.Resultado
+A operação é reiniciada e aparece como uma nova tarefa no Tracker.
+
+
+
+== Editar e tentar novamente uma operação com falha
+
+Edite os parâmetros da operação com falha e tente novamente a operação fora do Tracker.
+
+.Passos
+. No Tracker, selecione uma operação com falha.
+. Selecione o menu de três pontos e depois selecione *Editar e tentar novamente*.
++
+Você será redirecionado para a página de operação, criação de volume, por exemplo, onde poderá editar os parâmetros e tentar a operação novamente.
+
+
+
+.Resultado
+A operação é reiniciada.  Acesse o Rastreador para visualizar o status da operação.

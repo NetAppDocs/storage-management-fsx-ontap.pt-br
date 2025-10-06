@@ -1,0 +1,16 @@
+= Melhorias na guia Relacionamentos de replicação
+:allow-uri-read: 
+
+
+
+
+=== Melhorias na guia Relacionamentos de replicação
+
+Adicionamos várias colunas novas à tabela de relacionamentos de replicação para fornecer mais informações sobre seus relacionamentos de replicação na guia *Relacionamentos de replicação*. A tabela agora inclui as seguintes colunas:
+
+* Política do SnapMirror
+* Sistema de arquivos de origem
+* Sistema de arquivos de destino
+* Estado do relacionamento
+* Último horário de transferência
+

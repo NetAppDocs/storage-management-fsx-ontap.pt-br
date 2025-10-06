@@ -1,0 +1,15 @@
+= Horário de início da janela de manutenção
+:allow-uri-read: 
+
+
+
+
+=== Horário de início da janela de manutenção
+
+Quandolink:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["criando um ambiente de trabalho"] , você pode especificar o horário de início da janela de manutenção semanal de 30 minutos para garantir que a manutenção não entre em conflito com atividades comerciais críticas.
+
+
+
+=== Distribuir dados de volume usando FlexGroups
+
+Ao criar um volume, você pode habilitar a otimização de dados criando um FlexGroup para distribuir dados entre os volumes.
