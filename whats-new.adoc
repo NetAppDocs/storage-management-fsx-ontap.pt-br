@@ -18,6 +18,16 @@ Saiba o que há de novo no FSx para ONTAP.
 
 
 
+== 17 de novembro de 2025
+
+
+
+=== O Gerenciador de Sistemas está disponível ao usar um link do AWS Lambda.
+
+A interface do ONTAP System Manager pode ser usada com um link do AWS Lambda para executar operações avançadas do ONTAP . Isso oferece uma alternativa ao uso de um agente de console com o System Manager para gerenciar um sistema de arquivos FSx para ONTAP diretamente do console. link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Aprenda a usar links para operações avançadas do ONTAP."^]
+
+
+
 == 11 de novembro de 2025
 
 

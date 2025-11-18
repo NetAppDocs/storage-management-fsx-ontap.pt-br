@@ -1,0 +1,9 @@
+= O Gerenciador de Sistemas está disponível ao usar um link do AWS Lambda.
+:allow-uri-read: 
+
+
+
+
+=== O Gerenciador de Sistemas está disponível ao usar um link do AWS Lambda.
+
+A interface do ONTAP System Manager pode ser usada com um link do AWS Lambda para executar operações avançadas do ONTAP . Isso oferece uma alternativa ao uso de um agente de console com o System Manager para gerenciar um sistema de arquivos FSx para ONTAP diretamente do console. link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Aprenda a usar links para operações avançadas do ONTAP."^]
