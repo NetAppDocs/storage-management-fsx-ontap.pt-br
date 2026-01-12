@@ -11,5 +11,3 @@ As tarefas de gerenciamento do sistema de arquivos FSx para ONTAP , como adiçã
 link:https://docs.netapp.com/us-en/workload-fsx-ontap/learn-fsx-ontap.html#features["Saiba mais sobre os recursos do FSx para ONTAP na BlueXP workload factory"^]
 
 Se você estiver procurando pela opção _visualização avançada_, que permite gerenciar um sistema de arquivos FSx para ONTAP usando o ONTAP System Manager, agora você pode encontrar essa opção na tela do BlueXP depois de selecionar o ambiente de trabalho.
-
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-fsx-ontap/main/media/screenshot-system-manager.png["Uma captura de tela do painel direito no BlueXP Canvas após selecionar um ambiente de trabalho que mostra a opção Gerenciador de Sistema."]
