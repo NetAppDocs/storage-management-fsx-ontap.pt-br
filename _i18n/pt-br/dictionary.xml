@@ -742,7 +742,6 @@
   <block id="353d7ff4a3d58ad1fe8ef0ad6acab574" category="paragraph">NetApp Workload Factory agora oferece suporte à migração para VMs de armazenamento. Esse recurso permite a migração de dados e configurações do sistema de storage ONTAP de sistemas ONTAP locais ou sistemas de arquivos FSx for ONTAP de primeira geração para sistemas de arquivos FSx for ONTAP de segunda geração. Você pode replicar os dados e as configurações da VM de armazenamento para migrar para o novo sistema de arquivos com tempo de inatividade e interrupção mínimos para usuários e aplicativos.</block>
   <block id="fb2a77c6756f10fcc139a51a83349d7f" category="inline-link-macro">criar uma relação de replicação</block>
   <block id="33039f37667143e740ae3514cd2b2eea" category="inline-link-macro">migrar o storage VM e seus volumes replicados</block>
-  <block id="e6dbc21f7dea944e6aaaaa4c0d56159d" category="paragraph">Para usar este recurso, <block ref="a00423c4266b8832da7ddbc75235d0cb" category="inline-link-macro-rx"></block> e selecione *Migração* como caso de uso. Para concluir o processo de migração, você deve <block ref="4fbf2906eb98c7c630a3491ffc2b8863" category="inline-link-macro-rx"></block> imediatamente para migrar permanentemente os dados e as configurações da VM de storage para o sistema de arquivos FSx for ONTAP de destino.</block>
   <block id="a26acefb7c797c670c1c39de1408d5d6" category="doc">Replicar dados para FSx para ONTAP no NetApp Console</block>
   <block id="f009487bcbb1861316ff956fce5c3ac3" category="paragraph">Para a migração de storage VM, você deve concluir a operação de transição imediatamente após criar uma relação de replicação.</block>
   <block id="1b8db2e8955b459973ea9bfe988b7384" category="paragraph">A replicação protege seus dados contra desastres regionais e oferece suporte à migração de storage VM.</block>
@@ -763,8 +762,6 @@
   <block id="04e64253a4742b9534714d0147f467f6" category="paragraph">Para migrar os dados e as configurações da máquina virtual de armazenamento, você deve concluir duas operações.</block>
   <block id="ca0c3dd7dca9f636af3209d526098e1e" category="inline-xref">Criar uma relação de replicação</block>
   <block id="59835e5fb082d065015e2824a515a5b7" category="list-text"><block ref="75331dd4d9fa346165fac294e4e498ee" category="inline-xref-macro-rx"></block>, selecione *Migração* como caso de uso e selecione *Replicar configuração da VM de armazenamento*.</block>
-  <block id="db529797694203560d43ab415a6dd52d" category="inline-xref">replicação de transferência</block>
-  <block id="4ff5e77c5ed7650b96676675b9d3eb18" category="list-text"><block ref="76a1fb9977d9fe48f9a1edf04990b3a3" category="inline-xref-macro-rx"></block> para migrar permanentemente dados e configurações do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino.</block>
   <block id="c7e68f063ccf0d86162e4964cc1abdf0" category="paragraph">Para usar esse recurso, crie um</block>
   <block id="388c14942d26a5119b21a74fab9025a3" category="paragraph">Replicar dados entre dois sistemas de arquivos FSx for ONTAP, entre um sistema ONTAP local e um sistema de arquivos FSx for ONTAP, ou entre Cloud Volumes ONTAP e um sistema de arquivos FSx for ONTAP.</block>
   <block id="0aa7d11dc16260c47faf9d5b0b642366" category="paragraph">Revise estes requisitos antes de começar.</block>
@@ -792,4 +789,6 @@
   <block id="7b626244b5e77ec8426207a79760602c" category="inline-link-macro">modificar a política de hierarquização</block>
   <block id="cdefdf2807f30b87eddcd4e17418772a" category="paragraph">Após a migração, os volumes de origem são excluídos e os volumes de destino tornam-se leitura/gravação. Você pode <block ref="16bce6d1c351d0b9dcc239287b000317" category="inline-link-macro-rx"></block> para os volumes de destino após a migração.</block>
   <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">16 de fevereiro de 2026</block>
+  <block id="498aaff0cc400a96455ebb5b21ae7ffa" category="paragraph">Para usar este recurso, <block ref="a00423c4266b8832da7ddbc75235d0cb" category="inline-link-macro-rx"></block> e selecione *Migração* como caso de uso. Para concluir o processo de migração, você deve <block ref="26b59663dcf673cfcdf7f1e6b23597f9" category="inline-link-macro-rx"></block> imediatamente para migrar permanentemente os dados e as configurações da VM de storage para o sistema de arquivos FSx for ONTAP de destino.</block>
+  <block id="df319eebb5e9e4cde194e1e976bf0795" category="list-text"><block ref="7a9cdee14fa6d629f0d48ed18525f6a5" category="inline-xref-macro-rx"></block> para migrar permanentemente dados e configurações do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino.</block>
 </blocks>
