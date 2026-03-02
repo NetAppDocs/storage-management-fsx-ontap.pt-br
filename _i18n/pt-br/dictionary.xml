@@ -735,7 +735,6 @@
   <block id="ce5abe58cc3ff0993fa9e0b2c6ad1340" category="list-text">*Tipo de usuário*: selecione *UNIX* ou *Windows* como o tipo de usuário.</block>
   <block id="acbb57d15a35fb35e9bb5b030da0d855" category="list-text">*Configuração de rede*: Selecione *Internet* ou *nuvem privada virtual (VPC)*. O tipo de rede que você escolher determina se o ponto de acesso é acessível pela internet ou restrito a uma VPC específica.</block>
   <block id="6c7b2c1264a7189632e27a922b67c8b7" category="inline-link-macro">Documentação de preços do Amazon S3</block>
-  <block id="caabcc888415814c29639d089816b5fa" category="list-text">*Habilitar metadados*: Habilitar metadados cria uma tabela S3 contendo todos os objetos acessíveis pelo ponto de acesso S3, que você pode usar para auditoria, governança, automação, análise e otimização. Habilitar metadados acarreta custos adicionais da AWS. Consulte <block ref="af9c8757ba81fcc825b028513d05dce7" category="inline-link-macro-rx"></block> para mais informações.</block>
   <block id="56573dfcf7d1ac3cf78f2423725ccce8" category="list-text">*Etiquetas de ponto de acesso S3*: opcionalmente, você pode adicionar até 50 etiquetas.</block>
   <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09 de fevereiro de 2026</block>
   <block id="5d8caeaede63e2cdba6715a163d09892" category="doc">Suporte para migração de storage VM</block>
@@ -762,7 +761,6 @@
   <block id="04e64253a4742b9534714d0147f467f6" category="paragraph">Para migrar os dados e as configurações da máquina virtual de armazenamento, você deve concluir duas operações.</block>
   <block id="ca0c3dd7dca9f636af3209d526098e1e" category="inline-xref">Criar uma relação de replicação</block>
   <block id="59835e5fb082d065015e2824a515a5b7" category="list-text"><block ref="75331dd4d9fa346165fac294e4e498ee" category="inline-xref-macro-rx"></block>, selecione *Migração* como caso de uso e selecione *Replicar configuração da VM de armazenamento*.</block>
-  <block id="c7e68f063ccf0d86162e4964cc1abdf0" category="paragraph">Para usar esse recurso, crie um</block>
   <block id="388c14942d26a5119b21a74fab9025a3" category="paragraph">Replicar dados entre dois sistemas de arquivos FSx for ONTAP, entre um sistema ONTAP local e um sistema de arquivos FSx for ONTAP, ou entre Cloud Volumes ONTAP e um sistema de arquivos FSx for ONTAP.</block>
   <block id="0aa7d11dc16260c47faf9d5b0b642366" category="paragraph">Revise estes requisitos antes de começar.</block>
   <block id="be8334e3a8f0885af8e03ba816b24537" category="inline-link-macro">Aprenda como associar um link existente ou criar e associar um novo link</block>
@@ -794,4 +792,6 @@
   <block id="3acecbd4317d789f549785c17e6afb2c" category="doc">NetApp Status do agente do Console compatível para sistemas de arquivos FSx para ONTAP</block>
   <block id="5088f4e07e6650891b34cd38ec19877b" category="paragraph">NetApp Console agora exibe o status do agente do Console para sistemas de arquivos FSx for ONTAP em Workloads. O status indica se o agente está em execução e se consegue se comunicar com o sistema de arquivos FSx for ONTAP. Essas informações podem ajudar você a solucionar problemas de conectividade.</block>
   <block id="4aa1f4ce7ff97e69b143fbe399631234" category="section-title">01 de março de 2026</block>
+  <block id="3d8f5698e4ea8cae76ec64ff32d1aa8a" category="list-text">Inteligência Artificial (IA) e aprendizado de máquina (ML): replique seus dados ONTAP locais para o FSx for ONTAP e crie pontos de acesso S3 para suportar o treinamento de IA e ML na nuvem</block>
+  <block id="911879fb512486e8b5af8019b65a8205" category="list-text">*Habilitar tabela de inventário*: Ao habilitar a tabela de inventário no volume, o sistema gera metadados para todos os objetos acessíveis ao ponto de acesso S3 e incorre em custos de solicitação do AWS S3. Consulte <block ref="af9c8757ba81fcc825b028513d05dce7" category="inline-link-macro-rx"></block> para mais informações.</block>
 </blocks>
