@@ -18,6 +18,16 @@ Saiba o que há de novo no FSx para ONTAP.
 
 
 
+== 01 de março de 2026
+
+
+
+=== NetApp Status do agente do Console compatível para sistemas de arquivos FSx para ONTAP
+
+NetApp Console agora exibe o status do agente do Console para sistemas de arquivos FSx for ONTAP em Workloads. O status indica se o agente está em execução e se consegue se comunicar com o sistema de arquivos FSx for ONTAP. Essas informações podem ajudar você a solucionar problemas de conectividade.
+
+
+
 == 16 de fevereiro de 2026
 
 
