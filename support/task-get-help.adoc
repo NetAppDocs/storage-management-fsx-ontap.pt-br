@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: support/task-get-help.html 
-keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue, NetApp Console, bluexp 
+keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue, NetApp Console 
 summary: 'A NetApp fornece suporte para o NetApp Console de várias maneiras. Há diversas opções gratuitas de autoatendimento disponíveis 24 horas por dia, 7 dias por semana, como artigos da base de conhecimento (KB) e um fórum da comunidade. Seu cadastro no suporte inclui suporte técnico remoto por meio de tickets online.' 
 ---
 = Obter ajuda

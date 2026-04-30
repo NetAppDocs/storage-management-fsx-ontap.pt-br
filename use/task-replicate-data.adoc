@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/task-replicate-data.html 
-keywords: amazon fsx for netapp ontap, fsx, manage fsx for ontap system, delete fsx for ontap system, remove fsx for ontap system, throughput capacity, change throughput, automatic capacity management, capacity management, storage capacity, replication, classification, sync, backup, recovery, bluexp, NetApp Console 
-summary: Depois de criar ou descobrir um sistema FSx para ONTAP no NetApp Console, você pode gerenciar o sistema de arquivos e usar os serviços de dados do NetApp que fornecem recursos como backup e recuperação. 
+keywords: replication, replicate fsx for ontap, data protection, disaster recovery, data loss, initialize, cut over, cutover, data transfer, sync 
+summary: Crie uma relação de replicação para um sistema de arquivos FSx for ONTAP para evitar perda de dados em caso de um desastre imprevisto a partir do NetApp Console. 
 ---
 = Replicar dados para FSx para ONTAP no NetApp Console
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: Depois de criar ou descobrir um sistema FSx para ONTAP no NetApp Consol
 [role="lead"]
 Replique os dados para se proteger contra perda de dados caso a região onde seus dados residem sofra um desastre. A replicação de dados é compatível entre sistemas de arquivos FSx for ONTAP e sistemas ONTAP locais ou Cloud Volumes ONTAP.
 
-Para a migração de storage VM, você deve concluir a operação de transição imediatamente após criar uma relação de replicação.
+Ao replicar dados e configurações de máquinas virtuais de armazenamento, primeiro você deve criar e inicializar a relação de replicação e, em seguida, aguardar que os dados sejam sincronizados pelo menos uma vez antes de concluir a operação de cut over.
 
 
 
@@ -21,22 +21,22 @@ Para a migração de storage VM, você deve concluir a operação de transição
 
 A replicação protege seus dados contra desastres regionais e oferece suporte à migração de storage VM.
 
+A replicação inclui a criação e inicialização de uma relação de replicação. Para configurar a replicação, crie a relação de replicação. Para transferir os dados entre os sistemas de storage de origem e destino, inicialize a relação de replicação. Ao migrar dados e configurações de máquinas virtuais de armazenamento, você também deve concluir a operação de cutover.
+
 Os volumes replicados no sistema de arquivos de destino são volumes de proteção de dados (DP) e seguem o formato de nomenclatura: `{OriginalVolumeName}_copy`.
 
 Se você replicar um volume de origem com arquivos imutáveis, o volume de destino e o sistema de arquivos permanecerão bloqueados até o término do período de retenção do volume de origem. O recurso de arquivos imutáveis está disponível quando você link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-volume.html["criar um volume"] para um sistema de arquivos FSx for ONTAP.
 
 [NOTE]
 ====
-* A replicação não é suportada para volumes em bloco que utilizam os protocolos iSCSI ou NVMe.
-* Você pode replicar um volume de origem (leitura/gravação) ou um volume de proteção de dados (DP). A replicação em cascata é suportada, mas um terceiro salto não é. Saiba mais sobre link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_cascade-replication/cascade-replication.html["replicação em cascata"^].
-
+Você pode replicar um volume de origem (leitura/gravação) ou um volume de proteção de dados (DP). A replicação em cascata é suportada, mas um terceiro salto não é. Saiba mais sobre link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_cascade-replication/cascade-replication.html["replicação em cascata"^].
 
 ====
 
 
 === Casos de uso de migração
 
-Ao selecionar o caso de uso de migração, você pode optar por replicar os dados e as configurações da VM de armazenamento para uma única VM de armazenamento. Ao migrar dados e configurações simultaneamente, certifique-se de que a última replicação do volume tenha sido concluída nas últimas 24 horas. Todos os volumes na mesma VM de armazenamento devem ser selecionados para usar esse recurso. A política de camadas para todos os volumes é definida por padrão como a política de camadas do volume de origem, o que é recomendado para casos de uso de migração.
+Para migração, você pode optar por replicar os dados e as configurações da VM de armazenamento de uma VM de armazenamento. Se você migrar dados e configurações juntos, certifique-se de que a última replicação do volume tenha sido concluída nas últimas 24 horas. Você deve selecionar todos os volumes na mesma VM de armazenamento para usar esse recurso. A política de tiering para todos os volumes será definida por padrão como a política de tiering do volume de origem, o que é recomendado para casos de uso de migração.
 
 Workload Factory suporta a replicação de migração entre os seguintes sistemas de storage.
 
@@ -45,21 +45,21 @@ Workload Factory suporta a replicação de migração entre os seguintes sistema
 * FSx para ONTAP e FSx para ONTAP sistemas de arquivos
 +
 ** Primeiro para a primeira geração
-** Primeira para segunda geração
 ** Segundo para segunda geração
 
 
 
 
-Para migrar os dados e as configurações da máquina virtual de armazenamento, você deve concluir duas operações.
+Para migrar os dados e as configurações da storage VM, você precisa concluir três operações.
 
-. <<Criar uma relação de replicação,Criar uma relação de replicação>>, selecione *Migração* como caso de uso e selecione *Replicar configuração da VM de armazenamento*.
-. <<Corte da replicação para casos de uso de migração,Corte da replicação para casos de uso de migração>> para migrar permanentemente dados e configurações do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino.
+. <<Passo 1: criar a relação de replicação,Crie a relação de replicação>>, selecione *Migração* como caso de uso e selecione *Replicar configuração da VM de armazenamento*.
+. <<Etapa 2: inicializar a relação de replicação,Inicialize a relação de replicação>> transferir os dados da origem para o sistema de storage.
+. <<Etapa 3: cortar a replicação para casos de uso de migração,Corte da replicação para casos de uso de migração>> para migrar permanentemente dados e configurações do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino.
 
 
 
 
-== Criar uma relação de replicação
+== Passo 1: criar a relação de replicação
 
 Replicar dados entre dois sistemas de arquivos FSx for ONTAP, entre um sistema ONTAP local e um sistema de arquivos FSx for ONTAP, ou entre Cloud Volumes ONTAP e um sistema de arquivos FSx for ONTAP.
 
@@ -171,9 +171,52 @@ Se você criou uma relação de replicação para fins de migração, é necess�
 
 
 
-== Corte da replicação para casos de uso de migração
+== Etapa 2: inicializar a relação de replicação
 
-Após criar uma relação de replicação para um caso de uso de migração, você deve realizar a transição da replicação para concluir a migração dos dados e das configurações da VM de armazenamento para o sistema de arquivos FSx for ONTAP de destino. A transição da replicação migra permanentemente os dados e as configurações da VM de armazenamento do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino. Durante a transição, os dados são replicados pela última vez. O sistema exclui o(s) volume(s) de origem após a conclusão da transição. Você não pode desfazer essa ação.
+Inicialize uma relação de replicação entre os volumes de origem e destino para transferir o snapshot e todos os blocos de dados no NetApp Workload Factory.
+
+A inicialização realiza uma transferência _completa_: ela cria um instantâneo do volume de origem e, em seguida, transfere o instantâneo e todos os blocos de dados referenciados por ele para o volume de destino.
+
+.Antes de começar
+Considere o melhor horário para realizar esta operação. A inicialização pode ser demorada. Talvez seja melhor executar a transferência completa fora do horário de pico.
+
+.Passos
+. No NetApp Console, selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até cargas de trabalho como armazenamento, eda, ai, bancos de dados, vmware e administração."] e, em seguida, selecione *Armazenamento*.
+
+
+. No menu Storage, selecione *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que deseja atualizar e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *Relações de replicação*.
+. Na guia Relações de replicação, selecione o menu de ações da relação de replicação que deseja inicializar.
+. Selecione *Inicializar*.
+
+
+. Na caixa de diálogo Inicializar relacionamento, selecione *Inicializar*.
++
+Quando o status de replicação mostrar *Ocioso*, a transferência de dados está concluída.
+
+
+
+
+
+== Etapa 3: cortar a replicação para casos de uso de migração
+
+Após criar a relação de replicação para um caso de uso de migração, você deve realizar a replicação de transição para concluir a migração dos dados e das configurações da máquina virtual de armazenamento para o sistema de arquivos FSx for ONTAP de destino. A replicação de transição migra permanentemente os dados e as configurações da máquina virtual de armazenamento do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino. Durante a transição, os dados são replicados pela última vez. A máquina virtual de armazenamento de origem fica offline quando a transição começa.
+
+
+
+=== Planejar a operação de transição
+
+Considere o seguinte ao planejar a operação de transição para casos de uso de migração.
+
+* *Suporte à versão de replicação*: Os sistemas de storage de origem e destino devem ter a mesma versão principal do ONTAP. Por exemplo, se o sistema de origem estiver executando a versão do ONTAP 9.18.1, o sistema de destino também deverá executar uma versão 9.18.1.
+* *Configurações da VM de armazenamento*: A operação de migração não migra todas as configurações da VM de armazenamento para a VM de destino. Por exemplo, as configurações de iSCSI, MTU do domínio de broadcast e DNS não são migradas. Atualize essas configurações manualmente na VM de destino após a migração. Para mais detalhes, consulte a seção <<Atualize as configurações de configuração após a migração,Atualize as configurações de configuração após a migração>>.
+* *Clones*: Os clones são migrados como volumes individuais e, portanto, consumirão mais espaço no sistema de arquivos FSx for ONTAP de destino. Considere excluir os clones antes da migração para evitar o aumento da capacidade no destino.
+* *Volumes de cache*: Para ONTAP FlexCache 9.17.x ou inferior. VMs de armazenamento de origem que contêm volumes de cache não são compatíveis para cutover. Remova a relação ONTAP FlexCache antes do cutover para evitar falhas na migração.
+* *Pontos de acesso AWS S3*: A replicação de transição para casos de uso de migração não é compatível com volumes que possuem pontos de acesso S3. Exclua os pontos de acesso S3 do volume de origem para evitar falhas na migração.
+* *Configurações do ONTAP S3*: A replicação de transição para casos de uso de migração não é compatível para vservers com configurações do ONTAP S3. Remova as configurações do ONTAP S3, incluindo object-store-server, buckets, usuários, grupos ou políticas no vserver, para evitar falhas na migração.
+* *Números de série do LUN e IQN do destino iSCSI*: Os números de série do LUN e o IQN do destino iSCSI mudam durante a migração.
+
 
 .Antes de começar
 Revise estes requisitos antes de começar.
@@ -182,10 +225,16 @@ Revise estes requisitos antes de começar.
 * Certifique-se de que todos os volumes de origem não estejam servindo nenhum dado antes de alternar a replicação.
 * Certifique-se de que os dados estejam sincronizados entre os volumes de origem e destino antes de alternar a replicação.
 * O sistema de arquivos FSx for ONTAP que você usa para a relação de replicação deve ter um link associado. link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"]. Depois de associar o link, retorne a esta operação.
++
+** As seguintes portas devem estar abertas no grupo de segurança associado ao FSx for ONTAP sistema de arquivos para conectividade de link: porta 443 (HTTPS) e porta 22 (SSH).
+
+
 
 
 .Passos
 . No NetApp Console, selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até cargas de trabalho como armazenamento, eda, ai, bancos de dados, vmware e administração."] e, em seguida, selecione *Armazenamento*.
+
+
 . No menu Storage, selecione *FSx for ONTAP*.
 . Em *FSx for ONTAP*, selecione o sistema de arquivos que contém o(s) volume(s) a serem replicados.
 . Selecione a guia *Replication relationships*.
@@ -196,5 +245,26 @@ Revise estes requisitos antes de começar.
 . Selecione *Cut over*.
 
 
-.Resultado
-Após a migração, os volumes de origem são excluídos e os volumes de destino tornam-se leitura/gravação. Você pode link:https://docs.netapp.com/us-en/workload-fsx-ontap/change-tiering-policy.html["modificar a política de hierarquização"] para os volumes de destino após a migração.
+
+
+=== Atualize as configurações de configuração após a migração
+
+Após ativar a replicação para casos de uso de migração, atualize as seguintes configurações da máquina virtual de armazenamento na máquina virtual de armazenamento de destino.
+
+* Para iSCSI:
++
+** Recrie o igroup
+** Atualizar mapeamento LUN
+** Faça login em cada cliente SAN e atualize as configurações iSCSI/MPIO para o novo destino e remova os IPs de destino do vserver antigo
+
+
+* Verifique se as configurações de MTU do domínio de broadcast estão conforme o esperado
+* Valide se as configurações de DNS estão corretas
+* Recrie os relacionamentos de cache (relacionamentos ONTAP FlexCache) se existirem volumes de cache na VM de armazenamento de origem.
+
+
+
+
+== Informações relacionadas
+
+link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_wa-updates/change-tiering-policy.html["Modificar a política de tiering"] para o(s) volume(s) alvo após a transição.
