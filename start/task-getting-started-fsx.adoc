@@ -22,7 +22,7 @@ Adicionar credenciais da AWS é necessário para fornecer ao NetApp Console as p
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]Opcional: Crie um agente de console ou um link
 [role="quick-margin-para"]
-Para executar algumas tarefas de gerenciamento no NetApp Console, você precisa de um agente do Console ou de um link do NetApp Workloads.  Um _Agente de console_ é uma máquina virtual que você implanta em sua VPC para gerenciar seus sistemas de arquivos FSx para ONTAP .  Um _link_ utiliza o AWS Lambda para criar um relacionamento de confiança e conectividade com seu FSx para sistemas de arquivos ONTAP .
+Para executar algumas tarefas de gerenciamento a partir do NetApp Console, você precisa de um agente do Console ou de um link do NetApp Workload Factory. Um agente do Console é uma máquina virtual que você implanta em sua VPC para gerenciar seus sistemas de arquivos FSx for ONTAP. Um link utiliza o AWS Lambda para criar uma relação de confiança e conectividade com seus sistemas de arquivos FSx for ONTAP.
 
 [role="quick-margin-list"]
 * link:../start/concept-fsx-aws.html#console-agents-and-links-unlock-all-fsx-for-ontap-features["Saiba quando um agente ou link do Console é necessário para o gerenciamento do FSx para ONTAP"]

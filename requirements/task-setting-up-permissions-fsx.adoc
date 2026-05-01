@@ -20,11 +20,9 @@ Para criar ou gerenciar um sistema de arquivos FSx for ONTAP , você precisa adi
 
 == Por que as credenciais da AWS são necessárias
 
-As credenciais da AWS são necessárias para criar e gerenciar o FSx para sistemas ONTAP no NetApp Console.  Você pode criar novas credenciais da AWS ou adicionar credenciais da AWS a uma organização existente.  As credenciais fornecem as permissões necessárias para gerenciar recursos e processos dentro do seu ambiente de nuvem AWS a partir do NetApp Console.
+As credenciais da AWS são necessárias para criar e gerenciar sistemas FSx for ONTAP a partir do NetApp Console. Você pode criar novas credenciais ou adicioná-las a uma organização existente. As credenciais permitem gerenciar recursos da AWS a partir do NetApp Console.
 
-Credenciais e permissões são gerenciadas pelo NetApp Workload Factory.  O Workload Factory é uma plataforma de gerenciamento de ciclo de vida projetada para ajudar os usuários a otimizar cargas de trabalho usando o Amazon FSx for NetApp ONTAP .  O NetApp Console usa o mesmo conjunto de credenciais e permissões da AWS que o Workload Factory.
-
-A interface do Workload Factory fornece aos usuários do FSx for ONTAP opções para habilitar recursos de carga de trabalho como armazenamento, VMware, bancos de dados e GenAI, além de selecionar permissões para as cargas de trabalho.  _Armazenamento_ é o recurso de gerenciamento de armazenamento no Workload Factory e é o único recurso que você precisa habilitar e adicionar credenciais para criar e gerenciar seus sistemas de arquivos FSx para ONTAP .
+As credenciais e permissões são gerenciadas pelo NetApp Workload Factory. O Workload Factory é uma plataforma de gerenciamento de ciclo de vida projetada para ajudar os usuários a gerenciar e aprimorar cargas de trabalho VMware, EDA e de banco de dados que são executadas em sistemas de arquivos Amazon FSx for NetApp ONTAP. O NetApp Console e o Workload Factory usam o mesmo conjunto de credenciais e permissões da AWS. _Storage_ é a funcionalidade de gerenciamento de storage no Workload Factory e é a única funcionalidade que você precisa ativar e para a qual precisa adicionar credenciais para criar e gerenciar seus sistemas de arquivos FSx for ONTAP.
 
 
 
@@ -46,16 +44,16 @@ Você pode adicionar credenciais usando dois métodos:
 
 == Adicionar credenciais a uma conta manualmente
 
-Você pode adicionar credenciais da AWS ao NetApp Console manualmente para dar à sua conta as permissões necessárias para gerenciar os recursos da AWS que você usará para executar suas cargas de trabalho exclusivas.  Cada conjunto de credenciais que você adicionar incluirá uma ou mais políticas do IAM com base nos recursos de carga de trabalho que você deseja usar e uma função do IAM atribuída à sua conta.
+Você pode adicionar manualmente as credenciais da AWS ao NetApp Console para conceder à sua conta as permissões para gerenciar as funcionalidades de carga de trabalho que deseja usar e uma função do IAM atribuída à sua conta.
 
 A criação das credenciais é composta por três partes:
 
 * Selecione os serviços e níveis de permissão que você gostaria de usar e crie políticas do IAM no AWS Management Console.
 * Crie uma função do IAM no AWS Management Console.
-* Em Cargas de trabalho no NetApp Console, insira um nome e adicione as credenciais.
+* Insira um nome e adicione as credenciais no NetApp Console.
 
 
-Para criar ou gerenciar um ambiente de trabalho FSx para ONTAP , você precisa adicionar credenciais da AWS às cargas de trabalho no NetApp Console , fornecendo o ARN de uma função do IAM que concede às cargas de trabalho as permissões necessárias para criar um ambiente de trabalho FSx para ONTAP .
+Para criar ou gerenciar um sistema de arquivos FSx for ONTAP, você precisa adicionar as credenciais da AWS no NetApp Console, fornecendo o ARN de uma função do IAM que conceda ao Workload Factory as permissões necessárias para criar um sistema de arquivos FSx for ONTAP.
 
 .Antes de começar
 Você precisará ter credenciais para fazer login na sua conta da AWS.
@@ -64,9 +62,6 @@ Você precisará ter credenciais para fazer login na sua conta da AWS.
 . No menu do NetApp Console , selecione *Administração* e depois *Credenciais*.
 . Na página *Credenciais da organização*, selecione *Adicionar credenciais*.
 . Selecione *Amazon Web Services*, depois *FSx for ONTAP* e depois *Avançar*.
-+
-Agora você está na página *Adicionar credenciais* no NetApp Workloads.
-
 . Selecione *Adicionar manualmente* e siga as etapas abaixo para preencher as três seções em _Configuração de permissões_.
 
 
@@ -74,19 +69,19 @@ Agora você está na página *Adicionar credenciais* no NetApp Workloads.
 
 === Etapa 1: selecione a capacidade de armazenamento e crie a política do IAM
 
-Nesta seção, você escolherá a capacidade de armazenamento a ser gerenciada como parte dessas credenciais e as permissões habilitadas para armazenamento.  Você também tem a opção de selecionar outras cargas de trabalho, como bancos de dados, GenAI ou VMware.  Depois de fazer suas seleções, você precisará copiar as permissões de política para cada carga de trabalho selecionada do Codebox e adicioná-las ao AWS Management Console na sua conta da AWS para criar as políticas.
+Nesta seção, você escolherá a capacidade de armazenamento a ser gerenciada com essas credenciais e as permissões de armazenamento. Você também tem a opção de selecionar outras cargas de trabalho, como bancos de dados, GenAI ou VMware. Depois de fazer suas seleções, você precisará copiar as permissões de política para cada carga de trabalho selecionada do Codebox e adicioná-las ao AWS Management Console em sua conta da AWS para criar as políticas.
 
 .Passos
-. Na seção *Criar políticas*, ative cada um dos recursos de carga de trabalho que você deseja incluir nessas credenciais.  Habilite *Armazenamento* para criar e gerenciar sistemas de arquivos.
+. Na seção *Criar políticas de permissão*, habilite cada uma das funcionalidades de carga de trabalho que você deseja incluir nessas credenciais. Habilite *Storage* para criar e gerenciar sistemas de arquivos.
 +
 Você pode adicionar recursos adicionais mais tarde, então basta selecionar as cargas de trabalho que você deseja implantar e gerenciar no momento.
 
 . Para as funcionalidades de carga de trabalho que oferecem opções de políticas de permissão, selecione o tipo de permissões que estarão disponíveis com essas credenciais. link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Saiba mais sobre as permissões."^].
-. Opcional: selecione *Ativar verificação automática de permissões* para verificar se você tem as permissões de conta da AWS necessárias para concluir as operações de carga de trabalho.  A ativação da verificação adiciona o `iam:SimulatePrincipalPolicy permission` às suas políticas de permissão.  O objetivo desta permissão é apenas confirmar permissões.  Você pode remover a permissão após adicionar credenciais, mas recomendamos mantê-la para evitar a criação de recursos para operações parcialmente bem-sucedidas e para poupá-lo de qualquer limpeza manual de recursos necessária.
+. Opcional: selecione *Habilitar verificação automática de permissões* para verificar se você possui as permissões necessárias da conta AWS para concluir as operações da carga de trabalho. Habilitar a verificação adiciona a  `iam:SimulatePrincipalPolicy permission` às suas políticas de permissão. O objetivo dessa permissão é apenas confirmar as permissões. Você pode remover a permissão após adicionar as credenciais, mas sugerimos mantê-la para impedir a criação de recursos caso alguma etapa falhe e para evitar a limpeza manual.
 . Na janela Codebox, copie as permissões para a primeira política do IAM.
 . Abra outra janela do navegador e faça login na sua conta da AWS no AWS Management Console.
 . Abra o serviço IAM e selecione *Políticas* > *Criar política*.
-. Selecione JSON como o tipo de arquivo, cole as permissões que você copiou na etapa 3 e selecione *Avançar*.
+. Selecione JSON como tipo de arquivo, cole as permissões que você copiou na etapa 4 e selecione *Next*.
 . Digite o nome da política e selecione *Criar política*.
 . Se você selecionou vários recursos de carga de trabalho na etapa 1, repita essas etapas para criar uma política para cada conjunto de permissões de carga de trabalho.
 
@@ -101,37 +96,37 @@ Nesta seção, você configurará uma função do IAM que o Workload Factory ass
 . No AWS Management Console, selecione *Funções > Criar função*.
 . Em *Tipo de entidade confiável*, selecione *Conta AWS*.
 +
-.. Selecione *Outra conta AWS* e copie e cole o ID da conta para o gerenciamento de carga de trabalho do FSx para ONTAP na interface do usuário Cargas de trabalho.
-.. Selecione *ID externo necessário* e copie e cole o ID externo da interface do usuário das cargas de trabalho.
+.. Selecione *Outra conta da AWS* e copie e cole o ID da conta para gerenciamento de cargas de trabalho do FSx for ONTAP a partir da interface de usuário do Console.
+.. Selecione *ID externo obrigatório* e copie e cole o ID externo na interface de usuário da NetApp Console.
 
 
 . Selecione *Avançar*.
 . Na seção Política de permissões, escolha todas as políticas que você definiu anteriormente e selecione *Avançar*.
 . Insira um nome para a função e selecione *Criar função*.
 . Copie o ARN da função.
-. Retorne à página Adicionar credenciais de cargas de trabalho, expanda a seção *Criar função* e cole o ARN no campo _ARN da função_.
+. Retorne à página Adicionar credenciais no NetApp Console, expanda a seção *Criar função* e cole o ARN no campo _ARN da função_.
 
 
 
 
 === Etapa 3: insira um nome e adicione as credenciais
 
-A etapa final é inserir um nome para as credenciais em Cargas de trabalho.
+A etapa final é inserir um nome para as credenciais.
 
 .Passos
-. Na página Adicionar credenciais de cargas de trabalho, expanda *Nome das credenciais*.
+. Na página Adicionar credenciais, expanda *Nome das credenciais*.
 . Digite o nome que você deseja usar para essas credenciais.
 . Selecione *Adicionar* para criar as credenciais.
 
 
 .Resultado
-As credenciais são criadas e podem ser visualizadas na página Credenciais.  Agora você pode usar as credenciais ao criar um ambiente de trabalho FSx para ONTAP .  Sempre que necessário, você pode renomear credenciais ou removê-las do NetApp Console.
+O Console cria as credenciais e as exibe na página Credenciais. Você pode usar, renomear ou remover credenciais do NetApp Console.
 
 
 
 == Adicionar credenciais a uma conta usando o CloudFormation
 
-Você pode adicionar credenciais da AWS às cargas de trabalho usando uma pilha do AWS CloudFormation selecionando os recursos da carga de trabalho que deseja usar e, em seguida, iniciando a pilha do AWS CloudFormation na sua conta da AWS.  O CloudFormation criará as políticas e a função do IAM com base nos recursos de carga de trabalho selecionados.
+Você pode adicionar credenciais da AWS ao NetApp Workload Factory usando uma pilha CloudFormation da AWS, selecionando os recursos de carga de trabalho que deseja usar e, em seguida, iniciando a pilha CloudFormation da AWS em sua conta da AWS. CloudFormation criará as políticas do IAM e a função do IAM com base nos recursos de carga de trabalho selecionados.
 
 .Antes de começar
 * Você precisará ter credenciais para fazer login na sua conta da AWS.
@@ -175,14 +170,14 @@ Você pode adicionar credenciais da AWS às cargas de trabalho usando uma pilha 
 . Selecione *Adicionar credenciais*.
 . Selecione *Amazon Web Services*, depois *FSx for ONTAP* e depois *Avançar*.
 +
-Agora você está na página *Adicionar credenciais* no NetApp Workloads.
+Você está agora na página *Adicionar Credenciais* no NetApp Workload Factory.
 
 . Selecione *Adicionar via AWS CloudFormation*.
 . Em *Criar políticas*, ative cada um dos recursos de carga de trabalho que você deseja incluir nessas credenciais e escolha um nível de permissão para cada carga de trabalho.
 +
 Você pode adicionar recursos adicionais mais tarde, então basta selecionar as cargas de trabalho que você deseja implantar e gerenciar no momento.
 
-. Opcional: selecione *Ativar verificação automática de permissões* para verificar se você tem as permissões de conta da AWS necessárias para concluir as operações de carga de trabalho.  A ativação da verificação adiciona o `iam:SimulatePrincipalPolicy` permissão para suas políticas de permissão.  O objetivo desta permissão é apenas confirmar permissões.  Você pode remover a permissão após adicionar credenciais, mas recomendamos mantê-la para evitar a criação de recursos para operações parcialmente bem-sucedidas e para poupá-lo de qualquer limpeza manual de recursos necessária.
+. Opcional: selecione *Habilitar verificação automática de permissões* para verificar se você possui as permissões necessárias na conta da AWS para concluir as operações da carga de trabalho. Habilitar a verificação adiciona a `iam:SimulatePrincipalPolicy` permissão às suas políticas de permissão. O objetivo dessa permissão é apenas confirmar as permissões. Você pode remover a permissão após adicionar as credenciais, mas sugerimos mantê-la para impedir a criação de recursos caso alguma etapa falhe e para evitar a limpeza manual.
 . Em *Nome das credenciais*, insira o nome que você deseja usar para essas credenciais.
 . Adicione as credenciais do AWS CloudFormation:
 +
@@ -200,4 +195,4 @@ Você deve efetuar login na conta da AWS onde o sistema de arquivos FSx for ONTA
 
 
 .Resultado
-As credenciais são criadas e podem ser visualizadas na página Credenciais.  Agora você pode usar as credenciais ao criar um ambiente de trabalho FSx para ONTAP .  Sempre que necessário, você pode renomear credenciais ou removê-las do NetApp Console.
+O Console cria as credenciais e as exibe na página Credenciais. Você pode usar, renomear ou remover credenciais do NetApp Console.
