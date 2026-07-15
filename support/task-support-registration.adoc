@@ -22,6 +22,7 @@ O registro para suporte não habilita o suporte da NetApp para um serviço de ar
 
 
 
+[[support-registration-overview]]
 == Visão geral do registro de suporte
 
 Existem duas formas de registro para ativar o direito ao suporte:
@@ -40,12 +41,14 @@ Registrar ambos os tipos de números de série habilita recursos como abertura d
 
 
 
+[[register-netapp-console-for-netapp-support]]
 == Registre o NetApp Console para suporte ao NetApp
 
 Para se registrar para obter suporte e ativar o direito ao suporte, um usuário na sua conta do NetApp Console deve associar uma conta do NetApp Support Site ao seu login no Console. A maneira como você se registra para o suporte da NetApp depende se você já tem uma conta no NetApp Support Site (NSS).
 
 
 
+[[existing-customer-with-an-nss-account]]
 === Cliente existente com uma conta NSS
 
 Se você for um cliente NetApp com uma conta NSS, basta se registrar para receber suporte pelo Console.
@@ -65,6 +68,7 @@ Observe que outros usuários do Console não verão o mesmo status de registro d
 
 
 
+[[existing-customer-but-no-nss-account]]
 === Cliente existente, mas sem conta NSS
 
 Se você já for um cliente da NetApp com licenças e números de série existentes, mas _nenhuma_ conta NSS, será necessário criar uma conta NSS e associá-la ao seu login do Console.
@@ -81,6 +85,7 @@ Se você já for um cliente da NetApp com licenças e números de série existen
 
 
 
+[[brand-new-to-netapp]]
 === Novidade na NetApp
 
 Se você é novo na NetApp e não tem uma conta NSS, siga cada etapa abaixo.
@@ -117,6 +122,7 @@ Depois de ter sua conta do Site de Suporte NetApp , associe a conta ao seu login
 
 
 
+[[associate-nss-credentials-for-cloud-volumes-ontap-support]]
 == Credenciais associadas do NSS para suporte do Cloud Volumes ONTAP
 
 É necessário associar as credenciais do NetApp Support Site à sua conta do Console para habilitar os seguintes fluxos de trabalho principais para o Cloud Volumes ONTAP:

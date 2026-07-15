@@ -4,6 +4,7 @@
 
 
 
+[[enhancements-to-replication-relationships-tab]]
 === Melhorias na guia Relacionamentos de replicação
 
 Adicionamos várias colunas novas à tabela de relacionamentos de replicação para fornecer mais informações sobre seus relacionamentos de replicação na guia *Relacionamentos de replicação*. A tabela agora inclui as seguintes colunas:

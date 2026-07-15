@@ -17,6 +17,7 @@ Ao replicar dados e configurações de máquinas virtuais de armazenamento, prim
 
 
 
+[[about-this-task]]
 == Sobre esta tarefa
 
 A replicação protege seus dados contra desastres regionais e oferece suporte à migração de storage VM.
@@ -34,6 +35,7 @@ Você pode replicar um volume de origem (leitura/gravação) ou um volume de pro
 ====
 
 
+[[migration-use-cases]]
 === Casos de uso de migração
 
 Para migração, você pode optar por replicar os dados e as configurações da VM de armazenamento de uma VM de armazenamento. Se você migrar dados e configurações juntos, certifique-se de que a última replicação do volume tenha sido concluída nas últimas 24 horas. Você deve selecionar todos os volumes na mesma VM de armazenamento para usar esse recurso. A política de tiering para todos os volumes será definida por padrão como a política de tiering do volume de origem, o que é recomendado para casos de uso de migração.
@@ -59,6 +61,7 @@ Para migrar os dados e as configurações da storage VM, você precisa concluir 
 
 
 
+[[step-1-create-the-replication-relationship]]
 == Passo 1: criar a relação de replicação
 
 Replicar dados entre dois sistemas de arquivos FSx for ONTAP, entre um sistema ONTAP local e um sistema de arquivos FSx for ONTAP, ou entre Cloud Volumes ONTAP e um sistema de arquivos FSx for ONTAP.
@@ -83,7 +86,13 @@ Revise estes requisitos antes de começar.
 *** Inteligência Artificial (IA) e aprendizado de máquina (ML): replique seus dados ONTAP locais para o FSx for ONTAP e crie pontos de acesso S3 para suportar o treinamento de IA e ML na nuvem
 *** Migração: transfere seus dados para o sistema de arquivos FSx for ONTAP de destino
 +
-*Replicar configuração da VM de armazenamento*: Opcionalmente, selecione para replicar os dados e as configurações de uma única VM de armazenamento. Ao migrar dados e configurações simultaneamente, certifique-se de que a última replicação do volume foi concluída nas últimas 24 horas. Todos os volumes na mesma VM de armazenamento devem ser selecionados para usar esse recurso. A política de camadas para todos os volumes é definida por padrão como a política de camadas do volume de origem, o que é recomendado para caso de uso de migração.
+*Replicar configuração da VM de armazenamento*: Opcionalmente, selecione para replicar os dados e as configurações de uma única VM de armazenamento. Ao migrar dados e configurações, todos os volumes devem concluir a replicação nas últimas 24 horas e, em seguida, a migração deve ocorrer ao mesmo tempo.
+
++
+A política de tiering para todos os volumes será definida por padrão como a política de tiering do volume de origem, o que é recomendado para casos de uso de migração.
+
++
+Durante a migração, os clientes acessam os dados do sistema de arquivos ONTAP. Após o cutover, os volumes ficam disponíveis por meio dos endereços IP do sistema de arquivos FSx for ONTAP de destino. Atualize quaisquer clientes ou recursos que ainda estejam usando o endereço IP antigo.
 
 *** Recuperação de desastres a quente: garante alta disponibilidade e recuperação rápida de desastres para cargas de trabalho críticas
 *** Recuperação de desastres a frio ou arquivados:
@@ -107,7 +116,10 @@ Para todos os casos de uso, se você habilitar snapshots para retenção de long
 
 
 .. *FSx for ONTAP file system*: Selecione as credenciais, a região e o nome do FSx for ONTAP file system de destino.
-.. *Nome da VM de armazenamento*: Selecione a VM de armazenamento no menu suspenso.  A VM de armazenamento selecionada é o destino para todos os volumes selecionados neste relacionamento de replicação.
+.. *Nome da VM de armazenamento*: Selecione a VM de armazenamento. A VM de armazenamento que você selecionar será o destino de todos os volumes selecionados nesta relação de replicação.
++
+Quando os nomes das máquinas virtuais de armazenamento de origem e de destino são idênticos, criamos um alias do sistema de arquivos para os nomes das máquinas virtuais de armazenamento de destino para evitar conflitos de peering.
+
 .. *Nome do volume*: O nome do volume de destino é gerado automaticamente com o seguinte formato `{OriginalVolumeName}_copy` .  Você pode usar o nome do volume gerado automaticamente ou inserir outro nome de volume.
 .. *Política de níveis*: Selecione a política de níveis para os dados armazenados no volume de destino.  A política de camadas assume como padrão a política de camadas recomendada para o caso de uso selecionado.
 +
@@ -124,6 +136,10 @@ Sem um limite, o desempenho da rede e dos aplicativos pode diminuir.  Como alter
 
 . Em Configurações de replicação, forneça o seguinte:
 +
+.. *Inicializar relacionamento de replicação*: escolha inicializar o relacionamento de replicação imediatamente após criá-lo ou posteriormente. Observe que a inicialização pode ser demorada, e talvez seja melhor executar a transferência completa fora do horário de pico.
++
+Para inicializar manualmente mais tarde, consulte as instruções em <<Etapa 2: inicializar a relação de replicação,Etapa 2: inicializar a relação de replicação>>.
+
 .. *Intervalo de replicação*: selecione a frequência com que os instantâneos são transferidos do volume de origem para o volume de destino.
 .. *Retenção de longo prazo*: Opcionalmente, habilite snapshots para retenção de longo prazo.  A retenção de longo prazo permite que os serviços empresariais continuem operando mesmo em caso de falha completa do site, permitindo que os aplicativos passem por failover de forma transparente usando uma cópia secundária.
 +
@@ -134,10 +150,10 @@ Se você habilitar a retenção de longo prazo, selecione uma política existent
 
 +
 
-NOTE: A correspondência de rótulos de origem e destino é necessária para retenção de longo prazo.  Se desejar, o Workload Factory pode criar rótulos ausentes para você.
+NOTE: A correspondência entre os rótulos de origem e destino é necessária para retenção de longo prazo. Se desejar, Workload Factory pode criar os rótulos que faltam para você.
 
 +
-*** *Escolha uma política existente*: selecione uma política existente no menu suspenso.
+*** *Escolha uma política existente*: selecione uma política existente.
 *** *Criar uma nova política*: insira um *nome de política*.
 
 
@@ -171,6 +187,7 @@ Se você criou uma relação de replicação para fins de migração, é necess�
 
 
 
+[[step-2-initialize-the-replication-relationship]]
 == Etapa 2: inicializar a relação de replicação
 
 Inicialize uma relação de replicação entre os volumes de origem e destino para transferir o snapshot e todos os blocos de dados no NetApp Workload Factory.
@@ -199,12 +216,14 @@ Quando o status de replicação mostrar *Ocioso*, a transferência de dados est�
 
 
 
+[[step-3-cut-over-replication-for-migration-use-cases]]
 == Etapa 3: cortar a replicação para casos de uso de migração
 
 Após criar a relação de replicação para um caso de uso de migração, você deve realizar a replicação de transição para concluir a migração dos dados e das configurações da máquina virtual de armazenamento para o sistema de arquivos FSx for ONTAP de destino. A replicação de transição migra permanentemente os dados e as configurações da máquina virtual de armazenamento do sistema de arquivos de origem para o sistema de arquivos FSx for ONTAP de destino. Durante a transição, os dados são replicados pela última vez. A máquina virtual de armazenamento de origem fica offline quando a transição começa.
 
 
 
+[[plan-for-the-cutover-operation]]
 === Planejar a operação de transição
 
 Considere o seguinte ao planejar a operação de transição para casos de uso de migração.
@@ -247,6 +266,7 @@ Revise estes requisitos antes de começar.
 
 
 
+[[update-configuration-settings-after-cutover]]
 === Atualize as configurações de configuração após a migração
 
 Após ativar a replicação para casos de uso de migração, atualize as seguintes configurações da máquina virtual de armazenamento na máquina virtual de armazenamento de destino.
@@ -265,6 +285,7 @@ Após ativar a replicação para casos de uso de migração, atualize as seguint
 
 
 
+[[related-information]]
 == Informações relacionadas
 
 link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_wa-updates/change-tiering-policy.html["Modificar a política de tiering"] para o(s) volume(s) alvo após a transição.

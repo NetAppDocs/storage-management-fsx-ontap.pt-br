@@ -4,6 +4,7 @@
 
 
 
+[[iamsimulatepermissionpolicy-permission-update]]
 === iam:Atualização de permissão SimulatePermissionPolicy
 
 Agora você pode gerenciar o `iam:SimulatePrincipalPolicy` permissão do console BlueXP quando você adiciona credenciais de conta adicionais da AWS ou adiciona um novo recurso de carga de trabalho, como a carga de trabalho GenAI.
