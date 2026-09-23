@@ -89,7 +89,6 @@
   <block id="8cb8a166d04bec88a46718a93a0dbae2" category="inline-link">Aviso legal para o NetApp Console</block>
   <block id="195b8adb08947e4bd61959a821198877" category="paragraph"><block ref="195b8adb08947e4bd61959a821198877" category="inline-link-rx"></block></block>
   <block id="bd88f5d8a1d52ec005c5976780f565ab" category="summary">Para criar ou gerenciar um ambiente de trabalho FSx para ONTAP , você precisa adicionar credenciais da AWS no NetApp Console fornecendo o ARN de uma função do IAM que concede as permissões necessárias para criar um sistema FSx para ONTAP no NetApp Console.</block>
-  <block id="8fad3d94a3385eeb6406613f49896cdd" category="doc">Configurar permissões para FSx para ONTAP</block>
   <block id="13f9bf1ee7de953172b557e8312ec6e4" category="section-title">Por que as credenciais da AWS são necessárias</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">Sobre esta tarefa</block>
   <block id="d396bcde35d40ba871e0e0c3704be40c" category="paragraph">Credenciais novas e existentes da AWS podem ser visualizadas no menu Administração na página *Credenciais*.</block>
@@ -437,7 +436,6 @@
   <block id="b49fadafd6f71d37744771f81d0895ed" category="list-text">No FSx para ONTAP em Armazenamento, selecione o menu de três pontos e depois selecione *Excluir*.</block>
   <block id="6b7a52834d577f2e4ac4d587036728f4" category="list-text">Selecione *Excluir* para confirmar a exclusão.</block>
   <block id="82d112df39f74e9fcdd66e0e6d5aa12b" category="summary">Depois de criar ou descobrir um sistema FSx para ONTAP no NetApp Console, você pode gerenciar o sistema de arquivos e usar os serviços de dados do NetApp que fornecem recursos como backup e recuperação.</block>
-  <block id="3d524a57e639824787f68c6f88019427" category="doc">Gerenciar um sistema de arquivos FSx para ONTAP no NetApp Console</block>
   <block id="2ec8c048ff53a4cbdbdfc16422f78635" category="paragraph">Depois de criar ou descobrir um sistema FSx para ONTAP no NetApp Console, você pode gerenciar o sistema de arquivos criando volumes, gerenciando VMs de armazenamento, protegendo dados e administrando o sistema de arquivos.  O Console também permite que você use serviços de dados que fornecem recursos como backup e recuperação, classificação de dados, sincronização de dados e muito mais.</block>
   <block id="9a7d7fe4ea2506122f2a5355c685706e" category="section-title">Gerenciar um sistema de arquivos usando o ONTAP System Manager</block>
   <block id="be0bf2e3af6b03378bb493466f3c335f" category="section-title">Gerenciar um sistema de arquivos usando o Amazon CloudFormation</block>
@@ -475,7 +473,6 @@
   <block id="a1eefe5e0a806535abe58cb68a54c9d1" category="paragraph">Para todos os casos de uso, se você habilitar snapshots para retenção de longo prazo, a política de replicação padrão será _MirrorAndVault_.</block>
   <block id="181b737a36ca59661f38fe5373437f6a" category="list-text">*Política de níveis*: Selecione a política de níveis para os dados armazenados no volume de destino.  A política de camadas assume como padrão a política de camadas recomendada para o caso de uso selecionado.</block>
   <block id="b3e9c4cd60af78168e1dfa0923b34db0" category="inline-link-macro">Capacidade de armazenamento de volume</block>
-  <block id="78e26b4f42ff9572ff33a0dbb9094105" category="paragraph">_Balanceado (Automático)_ é a política de camadas padrão ao criar um volume usando o console do Workload Factory.  Para obter mais informações sobre políticas de níveis de volume, consulte<block ref="de51d392f5d252a956349995f441f55c" category="inline-link-macro-rx"></block> na documentação do AWS FSx para NetApp ONTAP .  Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de camadas e inclui nomes de políticas de camadas do FSx para ONTAP entre parênteses.</block>
   <block id="538da000f69d1359c086e0483675390f" category="paragraph">Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente copiar a política de camadas do volume de origem para o volume de destino.  Você pode desmarcar a opção de copiar a política de camadas e selecionar uma política de camadas que se aplique ao volume selecionado para replicação.</block>
   <block id="c0fb38c08c1fe26c6d51d93cc15693b0" category="list-text">*Taxa máxima de transferência*: Selecione *Limitado* e insira o limite máximo de transferência em MB/s.  Como alternativa, selecione *Ilimitado*.</block>
   <block id="c498491de58eb1c7c7b811d5555b1afc" category="paragraph">Sem um limite, o desempenho da rede e dos aplicativos pode diminuir.  Como alternativa, recomendamos uma taxa de transferência ilimitada para sistemas de arquivos FSx for ONTAP para cargas de trabalho críticas, por exemplo, aquelas usadas principalmente para recuperação de desastres.</block>
@@ -494,7 +491,6 @@
   <block id="26a9c35f8624cf9588da9df5229f10ce" category="inline-link-macro">Comece a usar o NetApp Volume Caching</block>
   <block id="5b34ea6dcfe077d49a31cc3cf5e250cb" category="paragraph"><block ref="5b34ea6dcfe077d49a31cc3cf5e250cb" category="inline-link-macro-rx"></block></block>
   <block id="07dbd84dc76e5f414150543e3621c88a" category="summary">Rastreie o FSx para operações ONTAP e monitore o progresso da operação com o Tracker no NetApp Console.</block>
-  <block id="6041f961f7067357d8feb45a6180d001" category="doc">Monitore o FSx para operações ONTAP com o Tracker no NetApp Console</block>
   <block id="26fdc2ed771e04e56f2a9961462dec97" category="paragraph">Monitore e acompanhe a execução das operações do FSx para ONTAP e monitore o progresso do trabalho com o Tracker no NetApp Console.</block>
   <block id="13bdc4d0deb3d8b5a245f65276234a2c" category="paragraph">O NetApp Console fornece o Tracker, um recurso de monitoramento de tarefas, para que você possa monitorar e rastrear o progresso e o status das credenciais, FSx para ONTAP e operações de link, revisar detalhes de tarefas e subtarefas de operação e diagnosticar quaisquer problemas ou falhas.</block>
   <block id="6092aff2fd96382c8039bf4b05f69f42" category="paragraph">Várias ações estão disponíveis no Tracker.  Você pode filtrar trabalhos por período (últimas 24 horas, 7 dias, 14 dias ou 30 dias), carga de trabalho, status e usuário; encontrar trabalhos usando a função de pesquisa; e baixar a tabela de trabalhos como um arquivo CSV.  Você pode atualizar o Tracker a qualquer momento.  E você pode rapidamente tentar novamente uma operação com falha ou editar parâmetros para uma operação com falha e tentar a operação novamente.</block>
@@ -530,7 +526,6 @@
   <block id="9ee78825a71be6f2186eeff17cc5bced" category="paragraph">Você será redirecionado para a página de operação, criação de volume, por exemplo, onde poderá editar os parâmetros e tentar a operação novamente.</block>
   <block id="49814788ce382c87a117a40e54ae858b" category="paragraph">A operação é reiniciada.  Acesse o Rastreador para visualizar o status da operação.</block>
   <block id="bb918533d77dbb5a00111eac934ac64a" category="summary">Remova um sistema de arquivos FSx para ONTAP de um projeto no NetApp Console.</block>
-  <block id="d53d3a848ddd1dfe6133b3d5925c0fda" category="doc">Remover um sistema de arquivos FSx para ONTAP de um projeto</block>
   <block id="eed3f02d8949620862afeddee99a07d8" category="paragraph">Remova um sistema de arquivos FSx para ONTAP de um projeto no NetApp Console.  Esta operação dissocia o sistema de arquivos de um projeto para que você possa associá-lo a outro projeto dentro da mesma conta.</block>
   <block id="7bded6d1c93c014e3bfcf6f8c957035f" category="paragraph">Remover um sistema de arquivos FSx para ONTAP de um projeto o remove do NetApp Console.  Ele não exclui o sistema de arquivos FSx para ONTAP .  Mais tarde, você pode redescobrir o sistema de arquivos FSx para ONTAP no mesmo projeto ou em um projeto diferente dentro da mesma conta.</block>
   <block id="1a360ffc89a3460e1b84b1fc3ffc90b4" category="list-text">No FSx para ONTAP no Armazenamento, selecione o menu de três pontos e, em seguida, selecione *Remover do projeto*.</block>
@@ -711,7 +706,6 @@
   <block id="353d7ff4a3d58ad1fe8ef0ad6acab574" category="paragraph">NetApp Workload Factory agora oferece suporte à migração para VMs de armazenamento. Esse recurso permite a migração de dados e configurações do sistema de storage ONTAP de sistemas ONTAP locais ou sistemas de arquivos FSx for ONTAP de primeira geração para sistemas de arquivos FSx for ONTAP de segunda geração. Você pode replicar os dados e as configurações da VM de armazenamento para migrar para o novo sistema de arquivos com tempo de inatividade e interrupção mínimos para usuários e aplicativos.</block>
   <block id="fb2a77c6756f10fcc139a51a83349d7f" category="inline-link-macro">criar uma relação de replicação</block>
   <block id="33039f37667143e740ae3514cd2b2eea" category="inline-link-macro">migrar o storage VM e seus volumes replicados</block>
-  <block id="a26acefb7c797c670c1c39de1408d5d6" category="doc">Replicar dados para FSx para ONTAP no NetApp Console</block>
   <block id="1b8db2e8955b459973ea9bfe988b7384" category="paragraph">A replicação protege seus dados contra desastres regionais e oferece suporte à migração de storage VM.</block>
   <block id="38adbad92c37166c4ce64da1eb51513b" category="inline-link-macro">criar um volume</block>
   <block id="0d2b6b8037148b2d54a1cf8b887418e7" category="paragraph">Se você replicar um volume de origem com arquivos imutáveis, o volume de destino e o sistema de arquivos permanecerão bloqueados até o término do período de retenção do volume de origem. O recurso de arquivos imutáveis está disponível quando você <block ref="88d66b8875f0ded07f2f44fb2e4b70e3" category="inline-link-macro-rx"></block> para um sistema de arquivos FSx for ONTAP.</block>
@@ -797,7 +791,6 @@
   <block id="b33f176ae89f054db5b204e18e50bedb" category="list-text">Recrie os relacionamentos de cache (relacionamentos ONTAP FlexCache) se existirem volumes de cache na VM de armazenamento de origem.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">Informações relacionadas</block>
   <block id="aadb221d48ad5912d16ae10d1a2f7515" category="inline-link-macro">Modificar a política de tiering</block>
-  <block id="fc36a9d66532e35056304d11de6f9ae5" category="paragraph"><block ref="aac2c10b4c8f9f85b27f6266bbf93855" category="inline-link-macro-rx"></block> para o(s) volume(s) alvo após a transição.</block>
   <block id="e53b35d192f3743794b3e37a24c7e92c" category="paragraph">As credenciais da AWS são necessárias para criar e gerenciar sistemas FSx for ONTAP a partir do NetApp Console. Você pode criar novas credenciais ou adicioná-las a uma organização existente. As credenciais permitem gerenciar recursos da AWS a partir do NetApp Console.</block>
   <block id="1817603d4a287805c966d1fe5b8286a1" category="paragraph">As credenciais e permissões são gerenciadas pelo NetApp Workload Factory. O Workload Factory é uma plataforma de gerenciamento de ciclo de vida projetada para ajudar os usuários a gerenciar e aprimorar cargas de trabalho VMware, EDA e de banco de dados que são executadas em sistemas de arquivos Amazon FSx for NetApp ONTAP. O NetApp Console e o Workload Factory usam o mesmo conjunto de credenciais e permissões da AWS. _Storage_ é a funcionalidade de gerenciamento de storage no Workload Factory e é a única funcionalidade que você precisa ativar e para a qual precisa adicionar credenciais para criar e gerenciar seus sistemas de arquivos FSx for ONTAP.</block>
   <block id="063ec75c7bab602d59faa10e680ab3e3" category="paragraph">Você pode adicionar manualmente as credenciais da AWS ao NetApp Console para conceder à sua conta as permissões para gerenciar as funcionalidades de carga de trabalho que deseja usar e uma função do IAM atribuída à sua conta.</block>
@@ -835,5 +828,16 @@
   <block id="fabdd77b146b0b5f04616afb10561fb8" category="admonition">A correspondência entre os rótulos de origem e destino é necessária para retenção de longo prazo. Se desejar, Workload Factory pode criar os rótulos que faltam para você.</block>
   <block id="015e6ecffa9ac033df81ffa6004a8511" category="list-text">*Escolha uma política existente*: selecione uma política existente.</block>
   <block id="593b7503b2bb0ab3939f80c599e28d01" category="section-title">15 de julho de 2026</block>
-  <block id="911a94d5dfd3459887baca73e6590302" category="paragraph">Diretiva não resolvida em &lt;stdin&gt; - include::.._whatsnew/2026-07-15.adoc[]</block>
+  <block id="25b96777bfadb381f78f25912d595183" category="doc">Avisos legais para NetApp Console</block>
+  <block id="11af821352757a268574230f2a123a79" category="doc">Configure as permissões para Amazon FSx for NetApp ONTAP</block>
+  <block id="f500b12ed4ebc5367419db58198f8fac" category="doc">Obtenha ajuda com o Amazon FSx for NetApp ONTAP</block>
+  <block id="856edc4caec68fece6859c4be9360f3c" category="doc">Registre sua conta para suporte da NetApp</block>
+  <block id="5b1a8b485dfc95e21b8e18a7df766854" category="doc">Crie ou descubra um Amazon FSx for NetApp ONTAP sistema de arquivos</block>
+  <block id="9ec8a9f187481631b67157753c41fdb1" category="doc">Excluir um Amazon FSx for NetApp ONTAP sistema de arquivos</block>
+  <block id="8664f94d8b2b3bb84ff27a1b6f4d454d" category="doc">Gerencie Amazon FSx for NetApp ONTAP sistemas de arquivos</block>
+  <block id="78507cf4f441117a5c21cd08a87c06b5" category="doc">Monitore as operações do Amazon FSx for NetApp ONTAP com o Tracker</block>
+  <block id="dd95565fdf03d756422df4216067b472" category="doc">Remover um Amazon FSx for NetApp ONTAP sistema de arquivos de um projeto</block>
+  <block id="edd9b651163313031882b1c38ec03792" category="doc">Replicar dados com Amazon FSx for NetApp ONTAP</block>
+  <block id="4dd81c3ec298b3b3b12adbd43350c454" category="paragraph">_Balanced (Auto)_ é a política de tiering padrão ao criar um volume usando o console do Workload Factory. Para obter mais informações sobre políticas de tiering de volume, consulte <block ref="de51d392f5d252a956349995f441f55c" category="inline-link-macro-rx"></block> na documentação do AWS FSx for NetApp ONTAP. Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de tiering e inclui os nomes das políticas de tiering do FSx for ONTAP entre parênteses.</block>
+  <block id="c09808c9c6aa7961a8051c74e6c9def1" category="paragraph"><block ref="e0c6b7f121093601ef05ca7413d94a77" category="inline-link-macro-rx"></block> para o(s) volume(s) alvo após a transição.</block>
 </blocks>

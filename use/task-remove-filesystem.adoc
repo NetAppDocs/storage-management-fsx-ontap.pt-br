@@ -4,7 +4,7 @@ permalink: use/task-remove-filesystem.html
 keywords: amazon fsx for netapp ontap, fsx for ontap, fsx, remove fsx for ontap file system, remove file system, file system, disassociate file system, NetApp Console 
 summary: Remova um sistema de arquivos FSx para ONTAP de um projeto no NetApp Console. 
 ---
-= Remover um sistema de arquivos FSx para ONTAP de um projeto
+= Remover um Amazon FSx for NetApp ONTAP sistema de arquivos de um projeto
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

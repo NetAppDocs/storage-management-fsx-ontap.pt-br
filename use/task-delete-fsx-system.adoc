@@ -4,7 +4,7 @@ permalink: use/task-delete-fsx-system.html
 keywords: file system, delete file system, file system deletion 
 summary: Para excluir um sistema de arquivos do NetApp Console, você deve primeiro excluir quaisquer volumes, VMs de armazenamento ou relacionamentos de replicação associados ao sistema de arquivos. 
 ---
-= Excluir um sistema de arquivos FSx para ONTAP
+= Excluir um Amazon FSx for NetApp ONTAP sistema de arquivos
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

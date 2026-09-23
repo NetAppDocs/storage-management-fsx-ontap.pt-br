@@ -4,7 +4,7 @@ permalink: use/task-replicate-data.html
 keywords: replication, replicate fsx for ontap, data protection, disaster recovery, data loss, initialize, cut over, cutover, data transfer, sync 
 summary: Crie uma relação de replicação para um sistema de arquivos FSx for ONTAP para evitar perda de dados em caso de um desastre imprevisto a partir do NetApp Console. 
 ---
-= Replicar dados para FSx para ONTAP no NetApp Console
+= Replicar dados com Amazon FSx for NetApp ONTAP
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -123,7 +123,7 @@ Quando os nomes das máquinas virtuais de armazenamento de origem e de destino s
 .. *Nome do volume*: O nome do volume de destino é gerado automaticamente com o seguinte formato `{OriginalVolumeName}_copy` .  Você pode usar o nome do volume gerado automaticamente ou inserir outro nome de volume.
 .. *Política de níveis*: Selecione a política de níveis para os dados armazenados no volume de destino.  A política de camadas assume como padrão a política de camadas recomendada para o caso de uso selecionado.
 +
-_Balanceado (Automático)_ é a política de camadas padrão ao criar um volume usando o console do Workload Factory.  Para obter mais informações sobre políticas de níveis de volume, consultelink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de armazenamento de volume"^] na documentação do AWS FSx para NetApp ONTAP .  Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de camadas e inclui nomes de políticas de camadas do FSx para ONTAP entre parênteses.
+_Balanced (Auto)_ é a política de tiering padrão ao criar um volume usando o console do Workload Factory. Para obter mais informações sobre políticas de tiering de volume, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de armazenamento de volume"^] na documentação do AWS FSx for NetApp ONTAP. Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de tiering e inclui os nomes das políticas de tiering do FSx for ONTAP entre parênteses.
 
 +
 Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente copiar a política de camadas do volume de origem para o volume de destino.  Você pode desmarcar a opção de copiar a política de camadas e selecionar uma política de camadas que se aplique ao volume selecionado para replicação.
@@ -288,4 +288,4 @@ Após ativar a replicação para casos de uso de migração, atualize as seguint
 [[related-information]]
 == Informações relacionadas
 
-link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_wa-updates/change-tiering-policy.html["Modificar a política de tiering"] para o(s) volume(s) alvo após a transição.
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/change-tiering-policy.html["Modificar a política de tiering"] para o(s) volume(s) alvo após a transição.
